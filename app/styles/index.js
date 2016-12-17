@@ -1,6 +1,9 @@
 var styles = {
-  transparentBg : {
-    background: 'transparent'
-  }
+    transparentBg : {
+        background: 'transparent'
+    },
+    space: {
+        marginTop: '25px'
+    }
 }
 module.exports = styles;
