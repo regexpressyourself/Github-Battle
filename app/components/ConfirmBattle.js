@@ -1,11 +1,11 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-var styles = require('../styles');
-var Link = require('react-router').Link;
-var UserDetails = require('./UserDetails');
+var React              = require('react');
+var PropTypes          = React.PropTypes;
+var styles             = require('../styles');
+var Link               = require('react-router').Link;
+var UserDetails        = require('./UserDetails');
 var UserDetailsWrapper = require('./UserDetailsWrapper');
-var MainContainer = require('./MainContainer');
-var Loading = require('./Loading');
+var MainContainer      = require('./MainContainer');
+var Loading            = require('./Loading');
 
 function ConfirmBattle (props) {
     return props.isLoading === true
@@ -35,8 +35,8 @@ function ConfirmBattle (props) {
 }
 
 ConfirmBattle.propTypes = {
-    isLoading: PropTypes.bool.isRequired,
-    onInitiateBattle: PropTypes.func.isRequired,
-    playersInfo: PropTypes.array.isRequired
+    isLoading        : PropTypes.bool.isRequired,
+    onInitiateBattle : PropTypes.func.isRequired,
+    playersInfo      : PropTypes.array.isRequired
 }
 module.exports = ConfirmBattle
