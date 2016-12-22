@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactRouter from 'react-router';
-import {Link} from 'react-router';
+import React         from 'react';
+import ReactRouter   from 'react-router';
+import { Link }        from 'react-router';
 import MainContainer from './MainContainer';
 
 class Home extends React.Component {

@@ -20,7 +20,6 @@ function getTotalStars (repos) {
 }
 
 function getPlayersData (player) {
-    console.log(player);
     return getRepos(player.login)
         .then(getTotalStars)
         .then(function (totalStars) {
@@ -61,4 +60,4 @@ var helpers = {
 
     }
 };
-module.exports = helpers;
+export default helpers;

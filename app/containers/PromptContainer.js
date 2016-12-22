@@ -1,52 +1,54 @@
-var React = require('react');
-var Prompt = require('../components/Prompt');
+import React from 'react';
+import Prompt from '../components/Prompt';
 
-var PromptContainer = React.createClass({
-  contextTypes : {
-    router: React.PropTypes.object.isRequired
-  },
-  getInitialState: function() {
-    return {
-      username: ''
+class PromptContainer extends React.Component {
+    constructor(props, context) {
+        super(props)
+        context.router;
+        this.state= {username: ''};
+        this.handleUpdateUser = this.handleUpdateUser.bind(this);
+        this.handleSubmitUser= this.handleSubmitUser.bind(this);
     }
-  },
-  handleUpdateUser: function(e){
-    this.setState({
-      username: e.target.value
-    });
+    handleUpdateUser(e){
+        this.setState({
+            username: e.target.value
+        });
 
-  },
+    }
 
-  handleSubmitUser: function(e){
-    e.preventDefault();
-    var username = this.state.username;
-    this.setState({
-      username: username = ''
-    });
+    handleSubmitUser(e){
+        e.preventDefault();
+        var username = this.state.username;
+        this.state = {
+            username: ''
+        };
 
-    if (this.props.routeParams.playerOne) {
-      this.context.router.push({
-        pathname: '/battle',
-        query: {
-          playerOne: this.props.routeParams.playerOne,
-          playerTwo: this.state.username
+        if (this.props.routeParams.playerOne) {
+            this.context.router.push({
+                pathname: '/battle',
+                query: {
+                    playerOne: this.props.routeParams.playerOne,
+                    playerTwo: username
+                }
+            });
+        } else {
+            this.context.router.push('/playerTwo/' + username);
         }
-      });
-    } else {
-      this.context.router.push('/playerTwo/' + this.state.username);
     }
-  },
-  render: function (){
-    return (
-      <Prompt
-      onSubmitUser={this.handleSubmitUser}
-      onUpdateUser={this.handleUpdateUser}
-      header={this.props.route.header}
-      username={this.state.username}
-      />
-    )
+    render(){
+        return (
+            <Prompt
+                onSubmitUser={this.handleSubmitUser}
+                onUpdateUser={this.handleUpdateUser}
+                header={this.props.route.header}
+                username={this.state.username}
+            />
+        )
 
-  }
-});
+    }
+};
 
-module.exports = PromptContainer;
+PromptContainer.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
+export default PromptContainer;

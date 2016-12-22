@@ -1,4 +1,4 @@
-import {React, PropTypes} from 'react';
+import React from 'react';
 
 function UserDetails (user) {
   return (
@@ -18,17 +18,17 @@ function UserDetails (user) {
 }
 
 UserDetails.propTypes = {
-    score : PropTypes.number,
-    info  : PropTypes.shape({
-        avatar_url   : PropTypes.string.isRequired,
-        blog         : PropTypes.string,
-        company      : PropTypes.string,
-        followers    : PropTypes.number.isRequired,
-        following    : PropTypes.number.isRequired,
-        location     : PropTypes.string,
-        login        : PropTypes.string.isRequired,
-        name         : PropTypes.string,
-        public_repos : PropTypes.number.isRequired
+    score : React.PropTypes.number,
+    info  : React.PropTypes.shape({
+        avatar_url   : React.PropTypes.string.isRequired,
+        blog         : React.PropTypes.string,
+        company      : React.PropTypes.string,
+        followers    : React.PropTypes.number.isRequired,
+        following    : React.PropTypes.number.isRequired,
+        location     : React.PropTypes.string,
+        login        : React.PropTypes.string.isRequired,
+        name         : React.PropTypes.string,
+        public_repos : React.PropTypes.number.isRequired
     })
 }
 

@@ -1,10 +1,10 @@
-import {React, PropTypes} from 'react';
-import styles from '../styles';
-import UserDetails from './UserDetails';
+import React from 'react';
+import styles             from '../styles';
+import UserDetails        from './UserDetails';
 import UserDetailsWrapper from './UserDetailsWrapper';
-import Link from 'react-router';
-import MainContainer from './MainContainer';
-import Loading from './Loading';
+import { Link }               from 'react-router';
+import MainContainer      from './MainContainer';
+import Loading            from './Loading';
 
 function StartOver(){
     return (
@@ -17,7 +17,7 @@ function StartOver(){
 }
 function Results(props){
     if (props.isLoading) {
-        <Loading speed="800" text="One Moment" />
+        <Loading speed={ 800 } text="One Moment" />
     }
     if (props.scores[0] === props.scores[1]) {
         return (
@@ -50,8 +50,8 @@ function Results(props){
 };
 
 Results.propTypes = {
-    isLoading   : PropTypes.bool.isRequired,
-    playersInfo : PropTypes.array.isRequired,
-    scores      : PropTypes.array.isRequired,
+    isLoading   : React.PropTypes.bool.isRequired,
+    playersInfo : React.PropTypes.array.isRequired,
+    scores      : React.PropTypes.array.isRequired,
 }
 export default Results;

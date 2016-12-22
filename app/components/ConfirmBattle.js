@@ -1,15 +1,14 @@
-var React              = require('react');
-var PropTypes          = React.PropTypes;
-var styles             = require('../styles');
-var Link               = require('react-router').Link;
-var UserDetails        = require('./UserDetails');
-var UserDetailsWrapper = require('./UserDetailsWrapper');
-var MainContainer      = require('./MainContainer');
-var Loading            = require('./Loading');
+import React from 'react';
+import styles from '../styles';
+import { Link } from 'react-router';
+import UserDetails from './UserDetails';
+import UserDetailsWrapper from './UserDetailsWrapper';
+import MainContainer from './MainContainer';
+import Loading from './Loading';
 
 function ConfirmBattle (props) {
     return props.isLoading === true
-         ? <Loading speed="800" text="Waiting"/> :
+         ? <Loading text="Waiting"/> :
            <MainContainer>
                <h1>Confirm Players</h1>
                <div className='col-sm-8 col-sm-offset-2'>
@@ -35,8 +34,8 @@ function ConfirmBattle (props) {
 }
 
 ConfirmBattle.propTypes = {
-    isLoading        : PropTypes.bool.isRequired,
-    onInitiateBattle : PropTypes.func.isRequired,
-    playersInfo      : PropTypes.array.isRequired
+    isLoading        : React.PropTypes.bool.isRequired,
+    onInitiateBattle : React.PropTypes.func.isRequired,
+    playersInfo      : React.PropTypes.array.isRequired
 }
-module.exports = ConfirmBattle
+export default ConfirmBattle;

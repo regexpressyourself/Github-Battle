@@ -1,5 +1,6 @@
-import {React, PropTypes} from 'react';
-import transparentBg from '../styles';
+import React from 'react';
+import PropTypes from 'react';
+import { transparentBg } from '../styles';
 
 function Prompt (props) {
   return (
@@ -27,10 +28,10 @@ function Prompt (props) {
 }
 
 Prompt.propTypes = {
-  header       : PropTypes.string.isRequired,
-  onUpdateUser : PropTypes.func.isRequired,
-  onSubmitUser : PropTypes.func.isRequired,
-  username     : PropTypes.string.isRequired,
+  header       : React.PropTypes.string.isRequired,
+  onUpdateUser : React.PropTypes.func.isRequired,
+  onSubmitUser : React.PropTypes.func.isRequired,
+  username     : React.PropTypes.string.isRequired,
 }
 
-export default Prompt;;
+export default Prompt;
